@@ -1,6 +1,6 @@
 'use client'
 
-import { Bell, Settings, ShoppingCart, ChevronDown, ExternalLink, FileText, User, Briefcase, MapPin, Calendar, Phone } from "lucide-react"
+import { ExternalLink, FileText, User, Briefcase, MapPin, Calendar, Phone, Check, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
@@ -38,8 +38,14 @@ export function ViewReferralRequest() {
           <div className="flex justify-between items-center">
             <h1 className="text-3xl font-bold">View Referral Request</h1>
             <div className="flex space-x-4">
-              <Button variant="outline">Decline Referral</Button>
-              <Button>Provide Referral</Button>
+            <Button size="sm" variant="outline">
+              <Check className="h-4 w-4 mr-1" />
+                          Accept
+                        </Button>
+                        <Button size="sm" variant="outline">
+                          <X className="h-4 w-4 mr-1" />
+                          Reject
+                        </Button>
             </div>
           </div>
           <div className="grid md:grid-cols-3 gap-8">

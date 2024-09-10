@@ -1,7 +1,7 @@
 'use client'
 
 import { AppBar } from "@/components/app-bar"
-import { Bell, Settings, ShoppingCart, ChevronDown, Check, X, Eye } from "lucide-react"
+import { Eye } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
@@ -52,15 +52,7 @@ export function NotificationsPage() {
                       <p className="text-sm text-gray-500">{notification.time}</p>
                     </div>
                     {notification.type === "request" && (
-                      <div className="flex space-x-2 md:flex-row flex-col">
-                        <Button size="sm" variant="outline">
-                          <Check className="h-4 w-4 mr-1" />
-                          Accept
-                        </Button>
-                        <Button size="sm" variant="outline">
-                          <X className="h-4 w-4 mr-1" />
-                          Reject
-                        </Button>
+                      <div className="flex space-x-2 ">
                         <Link href={`/referral-request/${notification.id}`} passHref>
                           <Button size="sm" variant="outline">
                             <Eye className="h-4 w-4 mr-1" />

@@ -1,14 +1,7 @@
 'use client'
 
 import { AppBar } from "@/components/app-bar"
-import { Bell, Settings, ShoppingCart, ChevronDown, BadgeCheck } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
 import { Badge } from "@/components/ui/badge"
 import Link from "next/link"
 

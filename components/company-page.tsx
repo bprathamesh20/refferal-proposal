@@ -1,26 +1,27 @@
 'use client'
 
 import { AppBar } from "@/components/app-bar"
-import { Bell, Settings, ShoppingCart, ChevronDown, MapPin, Users, ExternalLink, Facebook, Linkedin, Twitter } from "lucide-react"
+import {  MapPin, Users, ExternalLink, Facebook, Linkedin, Twitter } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
+
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { useState } from "react"
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
 import { Input } from "@/components/ui/input"
+import { useToast } from "@/hooks/use-toast"
 
 export function CompanyPage({ companyName }: { companyName: string }) {
   const [isOpen, setIsOpen] = useState(false)
+  const { toast } = useToast()
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     // Handle form submission logic here
+    toast({
+      title: "Request submitted",
+      description: "Your request has been submitted. We will get back to you soon.",
+    })
     setIsOpen(false)
   }
 
