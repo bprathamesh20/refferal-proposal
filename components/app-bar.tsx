@@ -1,4 +1,4 @@
-import { Bell, Settings, ShoppingCart, ChevronDown } from "lucide-react"
+import { Bell, Settings, ShoppingCart, ChevronDown, Coins } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import {
   DropdownMenu,
@@ -32,6 +32,12 @@ export function AppBar() {
         </nav>
       </div>
       <div className="flex items-center space-x-4">
+        <Link href="/marketplace" passHref>
+          <div className="flex items-center space-x-2 border rounded-full px-3 py-1 cursor-pointer hover:bg-gray-100 transition-colors">
+            <Coins className="h-4 w-4 text-yellow-500" />
+            <span className="text-sm font-medium">1000</span>
+          </div>
+        </Link>
         <Link href="/notifications" passHref>
           <Button variant="ghost" size="icon" >
             <Bell className="h-5 w-5" />
