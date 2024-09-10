@@ -1,16 +1,11 @@
 'use client'
 
-import { Bell, Settings, ShoppingCart, ChevronDown, CheckCircle, Clock, User, Briefcase } from "lucide-react"
+import {  CheckCircle, Clock, User, Briefcase } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Progress } from "@/components/ui/progress"
+import { AppBar } from "./app-bar"
 
 const orderStatuses = [
   { id: 1, name: "Referral request initiated", completed: true },
@@ -25,50 +20,7 @@ export function ViewOrder() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <header className="flex items-center justify-between px-6 py-4 bg-white border-b">
-        <div className="flex items-center space-x-4">
-          <nav className="hidden md:flex space-x-4">
-            <a className="text-sm font-medium text-gray-600 hover:text-gray-900" href="#">
-              Find Jobs
-            </a>
-            <a className="text-sm font-medium text-gray-600 hover:text-gray-900" href="#">
-              Request Referrals
-            </a>
-            <a className="text-sm font-medium text-gray-600 hover:text-gray-900" href="#">
-              Referral Marketplace
-            </a>
-            <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center text-sm font-medium text-gray-600 hover:text-gray-900">
-                Resume Tools
-                <ChevronDown className="ml-1 h-4 w-4" />
-              </DropdownMenuTrigger>
-              <DropdownMenuContent>
-                <DropdownMenuItem>Resume Builder</DropdownMenuItem>
-                <DropdownMenuItem>Resume Review</DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
-            <a className="text-sm font-medium text-gray-600 hover:text-gray-900" href="#">
-              Pricing
-            </a>
-          </nav>
-        </div>
-        <div className="flex items-center space-x-4">
-          <Button variant="ghost" size="icon">
-            <Bell className="h-5 w-5" />
-            <span className="sr-only">Notifications</span>
-          </Button>
-          <Button variant="ghost" size="icon">
-            <ShoppingCart className="h-5 w-5" />
-            <span className="sr-only">Order History</span>
-          </Button>
-          <Button variant="ghost" size="icon">
-            <Settings className="h-5 w-5" />
-            <span className="sr-only">Settings</span>
-          </Button>
-          <Button variant="outline">Sign in</Button>
-          <Button>Sign up</Button>
-        </div>
-      </header>
+     <AppBar />
       <main className="flex-1 py-12 px-6">
         <div className="max-w-4xl mx-auto space-y-8">
           <h1 className="text-3xl font-bold">View Order</h1>
